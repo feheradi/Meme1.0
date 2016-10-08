@@ -26,6 +26,11 @@
                                             <action selector="pickAnImageFromPhotoAlbum:" destination="BYZ-38-t0r" id="slg-4i-ULC"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Camera" id="UMK-8A-URa" userLabel="cameraButton">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="fFX-gq-8PR"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-N3-2md"/>
@@ -42,6 +47,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="UMK-8A-URa" id="PHf-Io-UH3"/>
                         <outlet property="imagePickerView" destination="Uxp-N3-2md" id="V1K-AY-Qrj"/>
                     </connections>
                 </viewController>
