@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,26 +19,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9h-nx-ctf">
-                                <frame key="frameInset" minX="67" minY="269" width="240" height="128"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7h-ux-adF">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXm-rt-Fds">
                                 <items>
-                                    <barButtonItem title="Pick" id="Mv4-RF-6uK" userLabel="pickButton"/>
+                                    <barButtonItem title="Pick" id="wGX-me-Q1H" userLabel="pickButton">
+                                        <connections>
+                                            <action selector="pickAnImageFromPhotoAlbum:" destination="BYZ-38-t0r" id="slg-4i-ULC"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-N3-2md"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Z7h-ux-adF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1mR-UE-p3s"/>
-                            <constraint firstAttribute="trailing" secondItem="Z7h-ux-adF" secondAttribute="trailing" id="bXS-V5-gVo"/>
-                            <constraint firstItem="Z7h-ux-adF" firstAttribute="top" secondItem="A9h-nx-ctf" secondAttribute="bottom" constant="226" id="eg0-NL-z7A"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z7h-ux-adF" secondAttribute="bottom" id="y4c-mR-dRx"/>
+                            <constraint firstItem="AXm-rt-Fds" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0nM-4b-FZI"/>
+                            <constraint firstAttribute="trailing" secondItem="AXm-rt-Fds" secondAttribute="trailing" id="Lto-m3-4vC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uxp-N3-2md" secondAttribute="trailing" constant="150" id="Ott-Lh-fgw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AXm-rt-Fds" secondAttribute="bottom" id="S6D-iS-bAf"/>
+                            <constraint firstItem="AXm-rt-Fds" firstAttribute="top" secondItem="Uxp-N3-2md" secondAttribute="bottom" constant="249" id="o65-GV-fco"/>
+                            <constraint firstItem="Uxp-N3-2md" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="150" id="ryh-py-DZz"/>
+                            <constraint firstItem="Uxp-N3-2md" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="vSK-Xm-MK9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imagePickerView" destination="Uxp-N3-2md" id="V1K-AY-Qrj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="127.28635682158921"/>
         </scene>
     </scenes>
 </document>
