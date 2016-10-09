@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let textfieldDelegate = textFieldDelegate()
     
-    let memeAttributesForTextField = [NSStrokeColorAttributeName:UIColor.cyan, NSForegroundColorAttributeName:UIColor.black, NSFontAttributeName:UIFont(name: "HelveticaNeue-CondensedBlack",size:40)!, NSStrokeWidthAttributeName: -4.0] as [String : Any]   // Intializing Dictionary for Default Attributes of Text Field
+    let memeAttributesForTextField = [NSStrokeColorAttributeName:UIColor.black, NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont(name: "HelveticaNeue-CondensedBlack",size:40)!, NSStrokeWidthAttributeName: -4.0] as [String : Any]   // Intializing Dictionary for Default Attributes of Text Field
     
  // This method is the action for Pick Buttom which enables the use to select image froom Photo Library
     @IBAction func pickAnImageFromPhotoAlbum(_ sender: AnyObject) {
