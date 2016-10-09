@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
    
@@ -16,9 +17,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
     
-    let memeAttributesForTextField = [NSStrokeColorAttributeName:UIColor.cyan, NSForegroundColorAttributeName:UIColor.black, NSFontAttributeName:UIFont(name: "HelveticaNeue-CondensedBlack",size:40)!, NSStrokeWidthAttributeName: -4.0] as [String : Any] //Intializing Dictionary for Default Attributes of Text Field
+    let textfieldDelegate = textFieldDelegate()
     
- //This method is the action for Pick Buttom which enables the use to select image froom Photo Library
+    let memeAttributesForTextField = [NSStrokeColorAttributeName:UIColor.cyan, NSForegroundColorAttributeName:UIColor.black, NSFontAttributeName:UIFont(name: "HelveticaNeue-CondensedBlack",size:40)!, NSStrokeWidthAttributeName: -4.0] as [String : Any]   // Intializing Dictionary for Default Attributes of Text Field
+    
+ // This method is the action for Pick Buttom which enables the use to select image froom Photo Library
     @IBAction func pickAnImageFromPhotoAlbum(_ sender: AnyObject) {
         
         let imagePickerController = UIImagePickerController()
@@ -28,7 +31,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
- //This method is the action for Camera Button which allows user to take a picture using camera and add
+ // This method is the action for Camera Button which allows user to take a picture using camera and add
     @IBAction func pickAnImageFromCamera(_ sender: AnyObject) {
         
         let imagePickerController = UIImagePickerController()
@@ -38,7 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-  //This method sets image to UIImageView and dismiss the selection menu after selecting image
+  // This method sets image to UIImageView and dismiss the selection menu after selecting image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -52,7 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) //Enabling or Disabling Camera Button upon avialability of camera
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)  // Enabling or Disabling Camera Button upon avialability of camera
         
         }
     
@@ -60,16 +63,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         super.viewDidLoad()
         imagePickerView.contentMode = UIViewContentMode.scaleAspectFit
-        setTextField(topTextField,defaultText: "TOP")   //Intializing top TextField
-        setTextField(bottomTextField,defaultText: "BOTTOM")  //Intialing bottom TextField
+        setTextField(topTextField,defaultText: "TOP")    // Intializing top TextField
+        setTextField(bottomTextField,defaultText: "BOTTOM")   // Intialing bottom TextField
+
     }
     
-  //This function sets default text and text styles to top and bottom textfields
+  // This function sets default text and text styles to top and bottom textfields
     func setTextField(_ textField:UITextField, defaultText:String){
         
         textField.text = defaultText
         textField.defaultTextAttributes = memeAttributesForTextField
         textField.textAlignment = NSTextAlignment.center
+        textField.delegate = textfieldDelegate
+        
     }
-}
+  
+    }
 

@@ -14,6 +14,7 @@
 		DA8294E11DA80BB1002E8327 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8294DF1DA80BB1002E8327 /* LaunchScreen.storyboard */; };
 		DA8294EC1DA80BB1002E8327 /* MeMe_v1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8294EB1DA80BB1002E8327 /* MeMe_v1_0Tests.swift */; };
 		DA8294F71DA80BB1002E8327 /* MeMe_v1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8294F61DA80BB1002E8327 /* MeMe_v1_0UITests.swift */; };
+		DAA708B51DAAA36A00BE2754 /* textFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA708B41DAAA36A00BE2754 /* textFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DA8294F21DA80BB1002E8327 /* MeMe-v1.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MeMe-v1.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8294F61DA80BB1002E8327 /* MeMe_v1_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMe_v1_0UITests.swift; sourceTree = "<group>"; };
 		DA8294F81DA80BB1002E8327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAA708B41DAAA36A00BE2754 /* textFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				DA8294D61DA80BB1002E8327 /* AppDelegate.swift */,
 				DA8294D81DA80BB1002E8327 /* ViewController.swift */,
+				DAA708B41DAAA36A00BE2754 /* textFieldDelegate.swift */,
 				DA8294DA1DA80BB1002E8327 /* Main.storyboard */,
 				DA8294DD1DA80BB1002E8327 /* Assets.xcassets */,
 				DA8294DF1DA80BB1002E8327 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8294D91DA80BB1002E8327 /* ViewController.swift in Sources */,
+				DAA708B51DAAA36A00BE2754 /* textFieldDelegate.swift in Sources */,
 				DA8294D71DA80BB1002E8327 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +509,7 @@
 				DA8294FD1DA80BB1002E8327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA8294FE1DA80BB1002E8327 /* Build configuration list for PBXNativeTarget "MeMe-v1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				DA8295001DA80BB1002E8327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA8295011DA80BB1002E8327 /* Build configuration list for PBXNativeTarget "MeMe-v1.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				DA8295031DA80BB1002E8327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
