@@ -21,5 +21,9 @@ class textFieldDelegate: NSObject, UITextFieldDelegate{
         }
         
     }
-    
+    // This method is called for the text field to process the pressing of the return button.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()  //This method is called to dismiss the keyboard when the user taps the return button
+        return true
+    }
  }
