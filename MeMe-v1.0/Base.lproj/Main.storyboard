@@ -33,22 +33,42 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-N3-2md"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-N3-2md">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cy4-mr-02T" userLabel="Bottom Text Field">
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Nb-0eZ" userLabel="Top Text Field">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AXm-rt-Fds" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0nM-4b-FZI"/>
-                            <constraint firstAttribute="trailing" secondItem="AXm-rt-Fds" secondAttribute="trailing" id="Lto-m3-4vC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uxp-N3-2md" secondAttribute="trailing" constant="150" id="Ott-Lh-fgw"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AXm-rt-Fds" secondAttribute="bottom" id="S6D-iS-bAf"/>
-                            <constraint firstItem="AXm-rt-Fds" firstAttribute="top" secondItem="Uxp-N3-2md" secondAttribute="bottom" constant="249" id="o65-GV-fco"/>
-                            <constraint firstItem="Uxp-N3-2md" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="150" id="ryh-py-DZz"/>
-                            <constraint firstItem="Uxp-N3-2md" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="vSK-Xm-MK9"/>
+                            <constraint firstItem="AXm-rt-Fds" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ag-am-XaS"/>
+                            <constraint firstItem="Uxp-N3-2md" firstAttribute="trailing" secondItem="AXm-rt-Fds" secondAttribute="trailing" id="7G9-Xv-cEl"/>
+                            <constraint firstItem="zGl-Nb-0eZ" firstAttribute="leading" secondItem="cy4-mr-02T" secondAttribute="leading" id="BE1-Qz-eNx"/>
+                            <constraint firstItem="Uxp-N3-2md" firstAttribute="leading" secondItem="AXm-rt-Fds" secondAttribute="leading" id="Dya-rH-m7n"/>
+                            <constraint firstItem="zGl-Nb-0eZ" firstAttribute="trailing" secondItem="cy4-mr-02T" secondAttribute="trailing" id="Fcn-Yr-UQh"/>
+                            <constraint firstItem="AXm-rt-Fds" firstAttribute="top" secondItem="cy4-mr-02T" secondAttribute="bottom" constant="19" id="dLi-fV-e10"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AXm-rt-Fds" secondAttribute="bottom" id="dlK-vk-Bb4"/>
+                            <constraint firstAttribute="trailing" secondItem="AXm-rt-Fds" secondAttribute="trailing" id="eGD-VA-wXM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cy4-mr-02T" secondAttribute="trailing" constant="110" id="hab-0Z-0eI"/>
+                            <constraint firstItem="Uxp-N3-2md" firstAttribute="top" secondItem="zGl-Nb-0eZ" secondAttribute="bottom" constant="-49" id="t4a-nV-Uza"/>
+                            <constraint firstItem="zGl-Nb-0eZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="vjA-Wq-17s"/>
+                            <constraint firstItem="cy4-mr-02T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="98" id="vr4-Et-OW7"/>
+                            <constraint firstItem="cy4-mr-02T" firstAttribute="top" secondItem="Uxp-N3-2md" secondAttribute="bottom" constant="-49" id="wp2-ld-Bqz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="cy4-mr-02T" id="1T8-CV-wIM"/>
                         <outlet property="cameraButton" destination="UMK-8A-URa" id="PHf-Io-UH3"/>
                         <outlet property="imagePickerView" destination="Uxp-N3-2md" id="V1K-AY-Qrj"/>
+                        <outlet property="topTextField" destination="zGl-Nb-0eZ" id="sWZ-R8-FED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
