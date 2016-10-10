@@ -26,7 +26,8 @@
                                             <action selector="pickAnImageFromPhotoAlbum:" destination="BYZ-38-t0r" id="slg-4i-ULC"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="UMK-8A-URa" userLabel="cameraButton">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Peq-cd-AeA"/>
+                                    <barButtonItem systemItem="camera" id="UMK-8A-URa" userLabel="cameraButton">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="fFX-gq-8PR"/>
                                         </connections>
