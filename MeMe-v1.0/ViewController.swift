@@ -28,20 +28,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // This method is the action for Pick Buttom which enables the use to select image froom Photo Library
     @IBAction func pickAnImageFromPhotoAlbum(_ sender: AnyObject) {
         
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary //Specifying Photo Library as Source
-        present(imagePickerController, animated: true, completion: nil)
-        shareButton.isEnabled = true
+        pickImage(source: "album")
         
     }
     
  // This method is the action for Camera Button which allows user to take a picture using camera and add
     @IBAction func pickAnImageFromCamera(_ sender: AnyObject) {
         
+        pickImage(source: "camera")
+        
+    }
+    
+ // Picks an image 
+    func pickImage(source:String){
+        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.camera //Specifying Camera as Source
+        
+ // Specifying source
+        switch source {
+        case "album":
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary //Specifying Photo Library as Source
+        case "camera":
+             imagePickerController.sourceType = UIImagePickerControllerSourceType.camera //Specifying Camera as Source
+        default: break
+        }
+
         present(imagePickerController, animated: true, completion: nil)
         
     }
@@ -53,6 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         {
             imagePickerView.image = image
             self.dismiss(animated: true, completion: nil) // Dismiss the selection list
+            shareButton.isEnabled = true    //Enabled Share button
         }
         
     }
