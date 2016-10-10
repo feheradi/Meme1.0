@@ -111,7 +111,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //This method  is used shift the view's frame up from when keyboard appears
     func keyboardWillShow(_ notification:NSNotification) {
         if bottomTextField.isFirstResponder {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = -getKeyboardHeight(notification)
             
         }
         
@@ -181,6 +181,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Cancel Meme generated
     @IBAction func cancelMeme(_ sender: AnyObject) {
         imagePickerView.image = nil
+        shareButton.isEnabled = false
+        cancelButton.isEnabled = false
         viewDidLoad()
 
     }
