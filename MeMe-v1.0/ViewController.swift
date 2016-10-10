@@ -56,6 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)  // Enabling or Disabling Camera Button upon avialability of camera
+        subscribeToKeyboardNotifications()
         
         }
     
@@ -68,6 +69,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+        
+    }
+    
   // This function sets default text and text styles to top and bottom textfields
     func setTextField(_ textField:UITextField, defaultText:String){
         
@@ -78,5 +86,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
   
+    // This method use to subscribe keyboard notifications
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_ :)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_ :)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    // This method use to unsubscribe keyboard notifications
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    // This method  is used shift the view's frame up from when keyboard appears
+    func keyboardWillShow(_ notification:NSNotification){
+        if bottomTextField.isFirstResponder{
+        view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+    }
+    
+    // This method  is used shift the view's frame down from when keyboard disappears
+    func keyboardWillHide(_ notification:NSNotification){
+        if bottomTextField.isFirstResponder{
+        view.frame.origin.y = 0
+        }
+    }
+    
+    // This method is used to obtain keyboard height
+    func getKeyboardHeight(_ notification:NSNotification)-> CGFloat{
+        
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+       }
 
