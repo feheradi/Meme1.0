@@ -23,12 +23,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cy4-mr-02T" userLabel="Bottom Text Field">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Nb-0eZ" userLabel="Top Text Field">
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -49,17 +50,19 @@
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXm-rt-Fds">
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aUy-Yw-dry"/>
+                                    <barButtonItem width="82" style="plain" systemItem="fixedSpace" id="RzJ-h2-zqV"/>
                                     <barButtonItem systemItem="camera" id="UMK-8A-URa" userLabel="cameraButton">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="fFX-gq-8PR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Album" width="248" id="wGX-me-Q1H" userLabel="pickButton">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mq4-IR-fXJ"/>
+                                    <barButtonItem title="Album" id="wGX-me-Q1H" userLabel="pickButton">
                                         <connections>
                                             <action selector="pickAnImageFromPhotoAlbum:" destination="BYZ-38-t0r" id="slg-4i-ULC"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="78" style="plain" systemItem="fixedSpace" id="0hC-Ux-erC"/>
                                 </items>
                             </toolbar>
                         </subviews>
