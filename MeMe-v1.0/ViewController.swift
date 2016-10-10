@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
 
-    let textfieldDelegate = textFieldDelegate()
+    let textfieldDelegate = TextFieldDelegate()
     
     let memeAttributesForTextField = [NSStrokeColorAttributeName:UIColor.black, NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont(name: "HelveticaNeue-CondensedBlack",size:40)!, NSStrokeWidthAttributeName: -4.0] as [String : Any] //Intializing dictionary for default attributes of textfield
     

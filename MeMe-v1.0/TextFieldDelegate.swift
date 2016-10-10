@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: - textFieldDelegate: NSObject, UITextFieldDelegate
-class textFieldDelegate: NSObject, UITextFieldDelegate{
+class TextFieldDelegate: NSObject, UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField){ //This method is called when the user starts editing the textfield
         if textField.text == "TOP" || textField.text == "BOTTOM"{ //Clears default texts of textfield
             textField.text = ""
