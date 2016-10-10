@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
 
     
     let textfieldDelegate = textFieldDelegate()
@@ -66,6 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePickerView.image = image
             self.dismiss(animated: true, completion: nil) // Dismiss the selection list
             shareButton.isEnabled = true    //Enabled Share button
+            cancelButton.isEnabled = true
         }
         
     }
@@ -180,5 +182,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     present(activityController, animated: true, completion: nil)
     }
     
+    //Cancel Meme Generated
+    @IBAction func cancelMeme(_ sender: AnyObject) {
+        imagePickerView.image = nil
+        viewDidLoad()
+
+    }
 }
 
