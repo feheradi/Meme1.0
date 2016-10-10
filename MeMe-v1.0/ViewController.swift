@@ -16,18 +16,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var topToolBar: UIToolbar!
     
     let textfieldDelegate = textFieldDelegate()
     
     let memeAttributesForTextField = [NSStrokeColorAttributeName:UIColor.black, NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont(name: "HelveticaNeue-CondensedBlack",size:40)!, NSStrokeWidthAttributeName: -4.0] as [String : Any]   // Intializing Dictionary for Default Attributes of Text Field
     
- // This method is the action for Pick Buttom which enables the use to select image froom Photo Library
+    // This method is the action for Pick Buttom which enables the use to select image froom Photo Library
     @IBAction func pickAnImageFromPhotoAlbum(_ sender: AnyObject) {
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary //Specifying Photo Library as Source
         present(imagePickerController, animated: true, completion: nil)
+        shareButton.isEnabled = true
         
     }
     
@@ -118,6 +122,48 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue.height
+    }
+    
+    func save()-> MemeObject {
+        //Create the meme
+        let meme = MemeObject( topText: topTextField.text!, bottomText:bottomTextField.text!, image:imagePickerView.image!, memedImage: generateMemedImage())
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        
+        return meme
+
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        // Hide toolbar and navbar
+        bottomToolBar.isHidden = true
+        topToolBar.isHidden = true
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame,afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        // Show toolbar and navbar
+        bottomToolBar.isHidden = false
+        topToolBar.isHidden = false
+        
+        return memedImage
+    }
+    
+    //Share the MeMe
+    @IBAction func shareMeMe(_ sender: AnyObject) {
+        
+        let activityController = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
+        activityController.completionWithItemsHandler = { activity,completed,item,error in if completed {
+            let _ = self.save()
+            }
+            self.dismiss(animated: true, completion: nil)
+            }
+            
     }
     
        }
