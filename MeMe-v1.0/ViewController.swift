@@ -9,7 +9,7 @@
 import UIKit
 
 //MARK: - ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
-class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -96,8 +96,8 @@ class MemeEditorVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
   
     //This method use to subscribe keyboard notifications
     func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(MemeEditorVC.keyboardWillShow(_ :)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MemeEditorVC.keyboardWillHide(_ :)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_ :)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_ :)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
