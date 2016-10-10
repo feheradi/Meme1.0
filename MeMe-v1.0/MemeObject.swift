@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-struct MemeObject {
-    // Initializing a Meme object
+struct MemeObject { //Initializing a Meme object
     let topText:String
     let bottomText:String
     let image:UIImage

@@ -11,19 +11,20 @@ import UIKit
 
 // MARK: - textFieldDelegate: NSObject, UITextFieldDelegate
 class textFieldDelegate: NSObject, UITextFieldDelegate{
-    
-    // This method is called when the user starts editing the textfield
-    func textFieldDidBeginEditing(_ textField: UITextField){
-        
-        if textField.text == "TOP" || textField.text == "BOTTOM"{  // Clears default texts of textfield
+    func textFieldDidBeginEditing(_ textField: UITextField){ //This method is called when the user starts editing the textfield
+        if textField.text == "TOP" || textField.text == "BOTTOM"{ //Clears default texts of textfield
             textField.text = ""
             
         }
         
     }
-    // This method is called for the text field to process the pressing of the return button.
+    
+    //This method is called for the text field to process the pressing of the return button.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()  //This method is called to dismiss the keyboard when the user taps the return button
+        textField.resignFirstResponder() //This method is called to dismiss the keyboard when the user taps the return button
+        
         return true
+        
     }
+    
  }
