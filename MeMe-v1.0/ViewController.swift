@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var topToolBar: UIToolbar!
+
     
     let textfieldDelegate = textFieldDelegate()
     
@@ -163,8 +164,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             self.dismiss(animated: true, completion: nil)
             }
-            
+    present(activityController, animated: true, completion: nil)
     }
     
-       }
+}
 
